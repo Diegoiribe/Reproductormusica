@@ -1,0 +1,422 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.cuerpo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  transition-delay: 0.6s;
+  overflow: hidden;
+}
+.cuerpo.cambio {
+  background: #ffffff;
+  transition-delay: 0.6s;
+}
+
+.container {
+  position: relative;
+  width: 0;
+  height: 0;
+  background: red;
+  transition-delay: 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  width: 40px;
+  height: 40px;
+  background: red;
+  border-radius: 5px;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+.container .toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 116px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 23px;
+}
+.container .toggle::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+.container .toggle::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #ffffff;
+}
+.container .content {
+  min-width: 400px;
+  padding: 40px;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0);
+}
+.container .song2 {
+  display: none;
+}
+.container .song3 {
+  display: none;
+}
+.container .conimg {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 10px 10px 47px;
+}
+.container .conimg .icon {
+  font-size: 60px;
+  margin: 315px 0 0 250px;
+  cursor: pointer;
+}
+.container .conimg .iconn {
+  font-size: 60px;
+  margin: 315px 0 0 0;
+  cursor: pointer;
+}
+.container .conimg .imagen {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  visibility: visible;
+}
+.container .conimg .imagen1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  visibility: hidden;
+}
+.container .conimg .imagen2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  visibility: hidden;
+}
+.container .ventana {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  transition: 0.5s;
+  padding: 40px;
+  color: white;
+  margin: 0 0 0 900px;
+  opacity: 0;
+}
+.container .ventana .iftheworld {
+  visibility: hidden;
+}
+.container .ventana .iftheworldd {
+  visibility: hidden;
+}
+.container .ventana .iftheworlddd {
+  visibility: hidden;
+}
+.container .ventana .scarface {
+  visibility: hidden;
+}
+.container .ventana .inthestars {
+  visibility: hidden;
+}
+.container .ventana .inthestarss {
+  visibility: hidden;
+}
+.container .btn {
+  font-size: 50px;
+  background: transparent;
+  transition-delay: 0.6s;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 135px;
+  cursor: pointer;
+}
+.container .toggleBtn {
+  position: absolute;
+  bottom: -20px;
+  min-width: 60px;
+  height: 60px;
+  background: #0bcf32;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.container .toggleBtn::before {
+  content: "+";
+  font-size: 2.5em;
+  color: #fff;
+}
+.container.active .content {
+  opacity: 1;
+  transition-delay: 0.5s;
+  transform: scale(1);
+}
+.container.active .toggleBtn {
+  bottom: -90px;
+  transform: rotate(135deg);
+  background: red;
+}
+.container.active {
+  width: 400px;
+  height: 400px;
+  transition-delay: 0.5s;
+}
+.container.active::before {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+.container.activee .ventana {
+  opacity: 1;
+  transition-delay: 0.2s;
+  width: 400px;
+  height: 600px;
+  transition-delay: 0.2s;
+  background: red;
+  transition-delay: 0.6s;
+  color: #ffffff;
+}
+.container.activee .ventana .iftheworld {
+  position: absolute;
+  margin: 10px;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+.container.activee .ventana .iftheworld.oculto {
+  visibility: hidden;
+}
+.container.activee .ventana .iftheworldd.oculto {
+  position: absolute;
+  margin: 10px;
+  visibility: visible;
+}
+.container.activee .ventana .iftheworldd.visto {
+  visibility: hidden;
+}
+.container.activee .ventana .iftheworlddd.abierto {
+  position: absolute;
+  margin: 10px;
+  visibility: visible;
+}
+.container.activee .ventana .scarface {
+  position: absolute;
+  visibility: hidden;
+}
+.container.activee .ventana .inthestars {
+  position: absolute;
+  visibility: hidden;
+}
+.container.activee .ventana .inthestarss {
+  position: absolute;
+  visibility: hidden;
+}
+.container.cambio .imagen {
+  visibility: hidden;
+}
+.container.cambio .imagen1 {
+  visibility: visible;
+}
+.container.cambio .imagen2 {
+  visibility: hidden;
+}
+.container.cambio .song1 {
+  display: none;
+}
+.container.cambio .song2 {
+  display: flex;
+}
+.container.cambio .song3 {
+  display: none;
+}
+.container.cambio {
+  background: #000000;
+  transition-delay: 0.6s;
+}
+.container.cambio::before {
+  background: #000000;
+  transition-delay: 0.6s;
+}
+.container.cambio .btn {
+  background: transparent;
+  transition-delay: 0.6s;
+}
+.container.cambio .ventana {
+  background: #000000;
+  transition-delay: 0.6s;
+}
+.container.cambio .ventana .scarface {
+  position: absolute;
+  opacity: 1;
+  transition-delay: 0s;
+  margin: 10px;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.container.cambio .ventana .iftheworld {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio .ventana .iftheworldd {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio .ventana .iftheworlddd.abierto {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio .ventana .inthestars {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio .ventana .inthestarss {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio2 .imagen {
+  visibility: hidden;
+}
+.container.cambio2 .imagen1 {
+  visibility: hidden;
+}
+.container.cambio2 .imagen2 {
+  visibility: visible;
+}
+.container.cambio2 .song1 {
+  display: none;
+}
+.container.cambio2 .song2 {
+  display: none;
+}
+.container.cambio2 .song3 {
+  display: flex;
+}
+.container.cambio2 {
+  background: #ffffff;
+  transition-delay: 0.6s;
+  color: black;
+}
+.container.cambio2::before {
+  background: #ffffff;
+  transition-delay: 0.6s;
+}
+.container.cambio2 .btn {
+  background: transparent;
+  transition-delay: 0.6s;
+  color: black;
+}
+.container.cambio2 .content {
+  color: black;
+}
+.container.cambio2 .toggle::before {
+  background: black;
+}
+.container.cambio2 .toggle::after {
+  background: black;
+  box-shadow: 0 -8px 0 black;
+}
+.container.cambio2 .ventana {
+  background: #ffffff;
+  transition-delay: 0.6s;
+  color: black;
+}
+.container.cambio2 .ventana .inthestars {
+  position: absolute;
+  opacity: 1;
+  transition-delay: 0s;
+  margin: 10px;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.container.cambio2 .ventana .inthestars.cerrado {
+  visibility: hidden;
+}
+.container.cambio2 .ventana .inthestarss.medio {
+  position: absolute;
+  opacity: 1;
+  transition-delay: 0s;
+  margin: 10px;
+  visibility: visible;
+}
+.container.cambio2 .ventana .iftheworld {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio2 .ventana .iftheworldd {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio2 .ventana .iftheworlddd.abierto {
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.container.cambio2 .ventana .scarface {
+  visibility: hidden;
+  transition-delay: 0s;
+}/*# sourceMappingURL=style.css.map */
